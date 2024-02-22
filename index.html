@@ -368,19 +368,6 @@ button[value="off"]:active {
     <br>
 <footer>Developed by <a href="https://github.com/">Gautam</a></footer>
 <br>
-  <script> // Select all buttons with name "action"
-document.querySelectorAll('button[name="action"]').forEach(button => {
-    button.addEventListener('click', function() {
-        // Get the parent form element
-        const form = this.closest('form');
-        // Remove 'active' class from all buttons inside the form
-        form.querySelectorAll('button[name="action"]').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        // Add 'active' class to the clicked button
-        this.classList.add('active');
-    });
-});
- </script>
+  <script src="index.js"> </script>
 </body>
 </html>
