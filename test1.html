@@ -1,0 +1,386 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPIO Control Panel</title>
+    <style>
+    /* Updated CSS for toggle buttons */
+button {
+    margin: 20px;
+    border: 2px;
+    outline:none;
+    cursor: pointer;
+    position: relative;
+    width: 80px;
+    height: 35px;
+    
+    border-radius: 30px;
+    color:#ffffff;
+    font-size:15px;
+}
+
+
+
+/*Original CSS*/
+body{
+    
+   background-color: Black;
+   
+   block-size: auto;
+   box-sizing: border-box;
+   display: block;
+   Color:white;
+    
+}
+        .flex-container {
+            display: flex;
+            flex-wrap:wrap;
+            gap: 20px;
+            justify-content: center;
+            
+           
+        }
+        .box {
+            border: 1px solid #ccc;
+            background-color: #ffffff00;
+            
+            padding:0px;
+            margin: 10px;
+            width: 250px;
+            border-radius: 40px;
+            color: rgb(255, 255, 255);
+            text-decoration: solid;
+            text-align: center;
+            text-align: start;
+           text-align: center;
+        }
+        h2{
+            font-size: xx-large;
+            color:rgb(255, 255, 255);
+        }
+
+       
+
+        /* CSS for initial button colors */
+        button[value="on"] {
+            background-color: rgba(4, 124, 4, 0.505);
+        }
+
+        button[value="off"] {
+            background-color: rgba(101, 3, 3, 0.523);
+        }
+
+        /* CSS for toggle button colors */
+        button[value="on"].active {
+            background-color: #00ff00; /* Lighter green */
+        }
+
+        button[value="off"].active {
+            background-color: #ff0000; /* Lighter red */
+        }
+
+        /* Hover effect for box */
+        .box:hover {
+            transform: scale(1.01);
+            box-shadow: 0 0 20px #fff; /* Glow effect */
+        }
+
+        button:hover {
+            transform: scale(1.01);
+            box-shadow: 0 0 20px #fff; /* Glow effect */
+        }
+
+        body {
+            
+	--foreground: #2b323b;
+	--background: #161320;
+    
+	
+	--size: 12px;
+	--gutter: 12px;
+    
+	background: var(--foreground);
+	background-image: linear-gradient(var(--background) var(--gutter), transparent var(--gutter)), linear-gradient(90deg, var(--background) var(--gutter), transparent var(--gutter));
+	background-size: calc(var(--size) + var(--gutter)) calc(var(--size) + var(--gutter));
+        }
+
+h1{
+    text-align: center;
+}
+
+:root {
+  --steps: 16; /* Char count */
+  --background: #1d1f2000;
+}
+
+.typing {
+  /* Text style */
+  font-family: 'Inconsolata', Consolas, monospace;
+  font-size: 5vw;
+  color: #d7b94c;
+  /* Core styles */
+  position: relative;
+}
+.typing::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  color: white;
+  background: var(--foreground);
+  animation: typing 4s steps(var(--steps)) forwards, caret 1s infinite;
+}
+/* Animation */
+@keyframes typing {
+  to { width: 0; }
+}
+@keyframes caret {
+  50% { color: transparent; }
+}
+
+   footer{
+    text-align: center;
+   }
+   footer a{
+    text-decoration: none;
+    
+   }
+
+   /* CSS for the hamburger menu */
+   .hamburger {
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    cursor: pointer;
+  float:inline-start;
+  
+  
+}
+
+nav {
+    display: none;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 5px 15px;
+   float:inline-start;
+}
+
+nav ul li a {
+    color: #929292;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: White;
+}
+
+/* CSS for toggle button colors */
+button[value="on"].active,
+button[value="on"]:active {
+    background-color: #00ff00; /* Lighter green */
+}
+
+button[value="off"].active,
+button[value="off"]:active {
+    background-color: #ff0000; /* Lighter red */
+}
+
+    </style>
+</head>
+<body>
+    
+<div>
+    <header>
+       
+        <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+        <h1 class="typing">GPIO Control Panel!</h1>
+    </header>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#parent-bedroom">Parent Bedroom</a></li>
+            <li><a href="#child-bedroom">Child Bedroom</a></li>
+            <li><a href="#kitchen">Kitchen</a></li>
+            <li><a href="#washroom">Washroom</a></li>
+            <li><a href="#living-room">Living Room</a></li>
+            <li><a href="#motor-pump">Motor Pump</a></li>
+        </ul>
+    </nav>
+    <script>
+        function toggleMenu() {
+    var nav = document.getElementById('navbar');
+    nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+}
+
+    </script>
+</div>
+<br>
+<br>
+<br>
+<br>
+  <br>
+  
+  
+  
+ 
+
+
+    <div class="flex-container">
+        <div class="box" id="parent-bedroom">
+            <h2>Parent Bedroom</h2>
+            <form action="/gpio" method="post" >
+                <input type="hidden" name="pin" value="1">
+                <button type="submit" name="action" value="on" data-pin="1">Bulb On</button>
+                <input type="hidden" name="pin" value="1">
+                <button type="submit" name="action" value="off" data-pin="1">Bulb Off</button>
+            </form>
+                <form action="/gpio" method="post">
+                <input type="hidden" name="pin" value="2">
+                <button type="submit" name="action" value="on" data-pin="2">Fan On</button>
+                <input type="hidden" name="pin" value="2">
+                <button type="submit" name="action" value="off" data-pin="2">Fan Off</button>
+            </form>
+                <form action="/gpio" method="post">
+                <input type="hidden" name="pin" value="3">
+                <button type="submit" name="action" value="on" data-pin="3">AC On</button>
+                <input type="hidden" name="pin" value="3">
+                <button type="submit" name="action" value="off" data-pin="3">AC Off</button>
+            </form>
+        </div>
+
+        
+        <!-- Repeat similar structures for other rooms -->
+
+        
+            <div class="box" id="child-bedroom">
+                <h2>Child Bedroom</h2>
+                <form action="/gpio" method="post">
+                    <input type="hidden" name="pin" value="4">
+                    <button type="submit" name="action" value="on" data-pin="4">Bulb On</button>
+                    <input type="hidden" name="pin" value="4">
+                    <button type="submit" name="action" value="off" data-pin="4">Bulb Off</button>
+                </form>
+                    <form action="/gpio" method="post">
+                    <input type="hidden" name="pin" value="5">
+                    <button type="submit" name="action" value="on" data-pin="5">Fan On</button>
+                    <input type="hidden" name="pin" value="5">
+                    <button type="submit" name="action" value="off" data-pin="5">Fan Off</button>
+                </form>
+                    <form action="/gpio" method="post">
+                    <input type="hidden" name="pin" value="6">
+                    <button type="submit" name="action" value="on" data-pin="6">AC On</button>
+                    <input type="hidden" name="pin" value="6">
+                    <button type="submit" name="action" value="off" data-pin="6">AC Off</button>
+                </form>
+
+                    <form action="/gpio" method="post">
+                    <input type="hidden" name="pin" value="7">
+                    <button type="submit" name="action" value="on" data-pin="7">Study Lamp</button>
+                    <input type="hidden" name="pin" value="7">
+                    <button type="submit" name="action" value="off" data-pin="7">Study Lamp</button>
+                </form>
+            </div>
+
+            
+                <div class="box" id="kitchen">
+                    <h2>Kitchen</h2>
+                    <form action="/gpio" method="post">
+                        <input type="hidden" name="pin" value="8">
+                        <button type="submit" name="action" value="on" data-pin="8">Bulb On</button>
+                        <input type="hidden" name="pin" value="8">
+                        <button type="submit" name="action" value="off" data-pin="8">Bulb Off</button>
+                    </form>
+                </div>
+
+                
+                    <div class="box" id="washroom">
+                        <h2>Washroom</h2>
+                        <form action="/gpio" method="post">
+                            <input type="hidden" name="pin" value="9">
+                            <button type="submit" name="action" value="on" data-pin="9">Bulb On</button>
+                            <input type="hidden" name="pin" value="9">
+                            <button type="submit" name="action" value="off" data-pin="9">Bulb Off</button>
+                        </form>
+                        
+                            <form action="/gpio" method="post">
+                            <input type="hidden" name="pin" value="10">
+                            <button type="submit" name="action" value="on" data-pin="10">Geyser On</button>
+                            <input type="hidden" name="pin" value="10">
+                            <button type="submit" name="action" value="off" data-pin="10">Geyser Off</button>
+                        </form>
+                    </div>
+
+                    
+                        <div class="box" id="living-room">
+                            <h2>Living Room</h2>
+                            <form action="/gpio" method="post">
+                                <input type="hidden" name="pin" value="11">
+                                <button type="submit" name="action" value="on" data-pin="11">Bulb On</button>
+                                <input type="hidden" name="pin" value="11">
+                                <button type="submit" name="action" value="off" data-pin="11">Bulb Off</button>
+                            </form>
+                                <form action="/gpio" method="post">
+                                <input type="hidden" name="pin" value="12">
+                                <button type="submit" name="action" value="on" data-pin="12">Fan On</button>
+                                <input type="hidden" name="pin" value="12">
+                                <button type="submit" name="action" value="off" data-pin="12">Fan Off</button>
+                            </form>
+                                <form action="/gpio" method="post">
+                                <input type="hidden" name="pin" value="13">
+                                <button type="submit" name="action" value="on" data-pin="13">AC On</button>
+                                <input type="hidden" name="pin" value="13">
+                                <button type="submit" name="action" value="off" data-pin="13">AC Off</button>
+                            </form>
+                                <form action="/gpio" method="post">
+                                <input type="hidden" name="pin" value="15">
+                                <button type="submit" name="action" value="on" data-pin="15">TV On</button>
+                                <input type="hidden" name="pin" value="15">
+                                <button type="submit" name="action" value="off" data-pin="15">TV Off</button>
+                            </form>
+                        </div>
+
+                        <div class="box" id="motor-pump">
+                            <h2>Motor Pump</h2>
+                             <form action="/gpio" method="post">
+                                <input type="hidden" name="pin" value="14">
+                                <button type="submit" name="action" value="on" data-pin="14">Motor On</button>
+                                <input type="hidden" name="pin" value="14">
+                                <button type="submit" name="action" value="off" data-pin="14">Motor Off</button>
+                            </form>
+                        </div>
+
+    </div>
+
+
+
+
+
+    <br>
+<footer>Developed by <a href="https://github.com/">satyam</a></footer>
+<br>
+  <script> // Select all buttons with name "action"
+document.querySelectorAll('button[name="action"]').forEach(button => {
+    button.addEventListener('click', function() {
+        // Get the parent form element
+        const form = this.closest('form');
+        // Remove 'active' class from all buttons inside the form
+        form.querySelectorAll('button[name="action"]').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        // Add 'active' class to the clicked button
+        this.classList.add('active');
+    });
+});
+ </script>
+</body>
+</html>
