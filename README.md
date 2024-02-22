@@ -29,7 +29,9 @@ Security:
 This project demonstrates the feasibility of building a secure Web-based home automation system using Flask. The project successfully showcases remote control of appliances through a user-friendly and secure web UI. 
 <h2>7. Additional Information</h2>
 Provide system diagrams or screenshots for visualization.
-Acknowledge any external resources or contributions used.
-Index.html
+<img src="https://github.com/GEC-ian/Home-Automation-With-AI/blob/main/IMG_20240214_210525.jpg" >
+<img src="https://github.com/GEC-ian/Home-Automation-With-AI/blob/main/IMG_20240217_211034.jpg">
+<img src="https://github.com/GEC-ian/Home-Automation-With-AI/blob/main/IMG_20240220_181303.jpg">
+
 
 
