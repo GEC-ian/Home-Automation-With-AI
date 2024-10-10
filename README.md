@@ -33,5 +33,10 @@ Provide system diagrams or screenshots for visualization.
 <img src="https://github.com/GEC-ian/Home-Automation-With-AI/blob/main/IMG_20240217_211034.jpg" width="400">
 <img src="https://github.com/GEC-ian/Home-Automation-With-AI/blob/main/IMG_20240220_181303.jpg" width="400">
 
+<h2>Project Report</h2>
 
+<iframe src="https://github.com/GEC-ian/Home-Automation-With-AI/blob/main/final%20REVISED%20project%20file.pdf" width="100%" height="600px">
+    This browser does not support PDFs. Please download the PDF to view it: 
+    <a href="https://github.com/GEC-ian/Home-Automation-With-AI/blob/main/final%20REVISED%20project%20file.pdf">Download PDF</a>.
+</iframe>
 
