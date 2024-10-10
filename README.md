@@ -35,8 +35,7 @@ Provide system diagrams or screenshots for visualization.
 
 <h2>Project Report</h2>
 
-<iframe src="https://github.com/GEC-ian/Home-Automation-With-AI/blob/main/final%20REVISED%20project%20file.pdf" width="100%" height="600px">
-    This browser does not support PDFs. Please download the PDF to view it: 
-    <a href="https://github.com/GEC-ian/Home-Automation-With-AI/blob/main/final%20REVISED%20project%20file.pdf">Download PDF</a>.
+Download the PDF to view it: 
+    <a href="https://github.com/GEC-ian/Home-Automation-With-AI/blob/main/Report%20file.pdf">Download PDF</a>.
 </iframe>
 
