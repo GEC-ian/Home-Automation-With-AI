@@ -38,6 +38,6 @@ Provide system diagrams or screenshots for visualization.
 Download the PDF to view it: 👇
  <a href="https://github.com/GEC-ian/Home-Automation-With-AI/blob/main/Report%20file.pdf">Download PDF</a>
  
-Project Video : 👇
+Project Video : 👉
  <a href="https://youtu.be/KS58KkNq-jo">Click Here</a>
 
